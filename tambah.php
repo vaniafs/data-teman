@@ -7,7 +7,6 @@ if (isset($_POST["submit"])) {
     $umur = $_POST["umur"];
     $deskripsi = $_POST["deskripsi"];
 
-    // Inisialisasi variabel gambar
     $gambar_url = "";
 
     if ($_FILES["gambar"]["name"]) {

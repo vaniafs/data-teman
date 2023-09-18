@@ -55,6 +55,7 @@ $id = 1;
             <th>Umur</th>
             <th>Gambar</th>
             <th>Deskripsi</th>
+            <th>Aksi</th>
         </tr>
         <?php
         foreach($tb_data_teman as $teman) {
@@ -67,6 +68,21 @@ $id = 1;
                     <img src="<?=$teman->gambar;?>" alt="<?=$teman->nama;?>">
                 </td>
                 <td><?=$teman->deskripsi;?></td>
+                <td>
+                <a href="ubah.php?id=<?=$teman->id;?>" class="rectangular-button">Ubah</a>
+                    <a href="hapus.php?id=<?=$teman->id;?>" class="rectangular-button">Hapus</a>
+                </td>
+                
+                <script>
+                function hapusData(id) {
+                    var konfirmasi = confirm("Apakah Anda yakin ingin menghapus data ini (ID: " + id + ")?");
+                    if (konfirmasi) {
+                        window.location.href = "hapus.php?id=" + id;
+                    } else {
+
+                    }
+                    }
+                </script>
             </tr>
         <?php
         }

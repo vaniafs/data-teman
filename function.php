@@ -26,4 +26,25 @@ function tambah($data)
 
     return mysqli_affected_rows($koneksi);
 }
+function hapusData($id) {
+    global $koneksi;
+
+    $query = "DELETE FROM tb_data_teman WHERE id = $id";
+
+    mysqli_query($koneksi, $query);
+
+    return mysqli_affected_rows($koneksi);
+}
+function getById($id) {
+    global $koneksi;
+
+    $query = "SELECT * FROM tb_data_teman WHERE id = $id";
+    $result = mysqli_query($koneksi, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        return mysqli_fetch_object($result);
+    } else {
+        return null; 
+    }
+}
 ?>
